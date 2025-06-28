@@ -4,10 +4,8 @@ const cors = require('cors');
 const path = require('path');
 const connectDB = require('./config/db');
 const documentRoutes = require('./routes/documentRoutes');
-<<<<<<< HEAD
-=======
+
 const userRoutes = require('./routes/userRoutes');
->>>>>>> 7586bf7 (updated new-folder)
 
 dotenv.config();
 
@@ -23,17 +21,15 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve uploaded files statically
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-<<<<<<< HEAD
+HEAD
 // ✅ ROUTES - Corrected Base URL
 app.use('/api/documents', documentRoutes);
-=======
+
 // ✅ ROUTES
 const authRoutes = require('./routes/authRoutes');
 app.use('/api/documents', documentRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
->>>>>>> 7586bf7 (updated new-folder)
 
 app.get('/', (req, res) => {
   res.send('Welcome to the VaultDocs API!');
@@ -46,12 +42,12 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-<<<<<<< HEAD
+HEAD
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
-=======
+
 const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
@@ -76,4 +72,3 @@ server.on('error', (error) => {
       throw error;
   }
 });
->>>>>>> 7586bf7 (updated new-folder)
